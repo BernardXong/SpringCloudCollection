@@ -1,5 +1,6 @@
 package com.example.client.controller;
 
+import com.example.client.feginInterface.ProductClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -23,10 +24,12 @@ public class UnifiedController {
     //private LoadBalancerClient loadBalancerClient;
     @Autowired
     private RestTemplate restTemplate;
-    @GetMapping("getProductMsg")
-    public String getProductMsg(){
+    @Autowired
+    private ProductClient productClient;
+    //@GetMapping("getProductMsg")
+   // public String getProductMsg(){
         //消息定义
-        String msg;
+        //String msg;
 
         //1.直接使用restTemplate,url固定
         //RestTemplate restTemplate = new RestTemplate();
@@ -39,8 +42,16 @@ public class UnifiedController {
         //msg = restTemplate.getForObject(url,String.class);
 
         //3.利用注解loadBalance加持restTemplate方式(使用了RestTemplateConfig),url地址直接由应用名+请求路径;
-        msg = restTemplate.getForObject("http://microservice-one/info",String.class);
-        log.info("".equalsIgnoreCase(msg)?"this is fake msg! no service call!":msg);
-        return "".equalsIgnoreCase(msg)?"this is fake msg! no service call!":msg;
+        //msg = restTemplate.getForObject("http://microservice-one/info",String.class);
+        //log.info("".equalsIgnoreCase(msg)?"this is fake msg! no service call!":msg);
+        //return "".equalsIgnoreCase(msg)?"this is fake msg! no service call!":msg;
+    //}
+
+    @GetMapping("getProductMsgByFegin")
+    public String getProductMsgByFeign(){
+        String msg = productClient.productInfo();
+
+        log.info(msg);
+        return msg;
     }
 }
