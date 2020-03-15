@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  #自定义eureka 客户端连接,访问客户端的时候显示名称
+  instance:
+    instance-id: microservice-one
+spring:
+  application:
+    name: microservice-one
+server:
+  port: 9080
+
