@@ -13,8 +13,8 @@ spring:
       server:
         git:
           uri: https://github.com/BernardXong/SpringCloud-ConfigServer
-          username: xiongyun100@163.com
-          password: bernardx19880819
+          username: xxxxxxxxx
+          password: yyyyyyyyy
           basedir: F:\GitRepository\localConfig
 server:
   port: 8888
