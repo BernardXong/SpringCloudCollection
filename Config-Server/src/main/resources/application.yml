@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  #自定义eureka 客户端连接,访问客户端的时候显示名称
+  instance:
+    instance-id: config-server
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/BernardXong/SpringCloud-ConfigServer
+          username: xiongyun100@163.com
+          password: bernardx19880819
+          basedir: F:\GitRepository\localConfig
+server:
+  port: 8888

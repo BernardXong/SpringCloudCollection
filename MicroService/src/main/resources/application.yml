@@ -2,7 +2,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  #×Ô¶¨Òåeureka ¿Í»§¶ËÁ¬½Ó,·ÃÎÊ¿Í»§¶ËµÄÊ±ºòÏÔÊ¾Ãû³Æ
+  #è‡ªå®šä¹‰eureka å®¢æˆ·ç«¯è¿æ¥,è®¿é—®å®¢æˆ·ç«¯çš„æ—¶å€™æ˜¾ç¤ºåç§°
   instance:
     instance-id: microservice-one
 spring:

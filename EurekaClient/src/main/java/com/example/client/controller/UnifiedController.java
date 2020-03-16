@@ -26,6 +26,15 @@ public class UnifiedController {
     private RestTemplate restTemplate;
     @Autowired
     private ProductClient productClient;
+
+
+    /*****
+     * @Author Bernie
+     * @Description 采用restTemplate的方式通信
+     * @Date 20:36 2020/3/15
+     * @Param []
+     * @return java.lang.String
+     **/
     //@GetMapping("getProductMsg")
    // public String getProductMsg(){
         //消息定义
@@ -47,6 +56,13 @@ public class UnifiedController {
         //return "".equalsIgnoreCase(msg)?"this is fake msg! no service call!":msg;
     //}
 
+    /***
+     * @Author Bernie
+     * @Description 采用Fegin的方式通信
+     * @Date 20:36 2020/3/15
+     * @Param []
+     * @return java.lang.String
+     **/
     @GetMapping("getProductMsgByFegin")
     public String getProductMsgByFeign(){
         String msg = productClient.productInfo();
