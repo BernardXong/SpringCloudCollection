@@ -8,3 +8,11 @@ eureka:
 spring:
   application:
     name: eureka-client
+  cloud:
+    config:
+      discovery:
+        enable: true
+        server-id: config-server
+      profile: dev
+server:
+  port: 7080

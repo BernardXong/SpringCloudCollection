@@ -2,7 +2,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  #×Ô¶¨Òåeureka ¿Í»§¶ËÁ¬½Ó,·ÃÎÊ¿Í»§¶ËµÄÊ±ºòÏÔÊ¾Ãû³Æ
+  #å…³é—­æœ¬èº«éœ€è¦æ³¨å†ŒæœåŠ¡(æœåŠ¡ç«¯æœ¬èº«ä¹Ÿæ˜¯ä¸ªå®¢æˆ·ç«¯)
   instance:
     instance-id: config-server
 spring:
@@ -12,9 +12,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/BernardXong/SpringCloud-ConfigServer
-          username: xxxxxxxxx
-          password: yyyyyyyyy
+          uri: https://gitee.com/bernardxiong/demo-config-files.git
+          username: xiongyun100@163.com
+          password: Xy123456
           basedir: F:\GitRepository\localConfig
+          force-pull: true
 server:
   port: 8888
